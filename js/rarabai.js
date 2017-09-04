@@ -8,10 +8,10 @@ $(function(){
 
     var time_settings = function() {
       settings = {};
-      settings.none_abi = timeStrToSec($('#none-abi input').val(), 'アビ無し');
-      settings.naitoru = timeStrToSec($('#naitoru input').val(), 'ナイトル');
-      settings.naitoru_maruka = timeStrToSec($('#naitoru-maruka input').val(), 'ナイトルマルカート');
-      settings.kurarion_naitoru_maruka = timeStrToSec($('#kurarion-naitoru-maruka input').val(), 'クラリオンナイトルマルカート');
+      settings.none_abi = timeStrToSec($('#none-abi input').val());
+      settings.naitoru = timeStrToSec($('#naitoru input').val());
+      settings.naitoru_maruka = timeStrToSec($('#naitoru-maruka input').val());
+      settings.kurarion_naitoru_maruka = timeStrToSec($('#kurarion-naitoru-maruka input').val());
       return settings;
     }();
 
@@ -64,7 +64,7 @@ $(function(){
     }, 1000);
   }
 
-  function timeStrToSec(str, type) {
+  function timeStrToSec(str) {
     if (str === '') {
       return 0;
     }
@@ -80,7 +80,7 @@ $(function(){
     return sec;
   }
 
-  function secToTimeStr(sec, type) {
+  function secToTimeStr(sec) {
     var hour = Math.floor(sec / 3600);
     var min = Math.floor((sec % 3600) / 60);
     var sec = Math.floor(sec % 60);
